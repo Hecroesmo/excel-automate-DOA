@@ -1,0 +1,10 @@
+@echo off
+setlocal
+
+REM Get the absolute path of the current directory
+for %%A in ("%cd%") do set "CURRENT_DIR=%%~fA"
+
+REM Run the Docker command
+docker run -it -v "%CURRENT_DIR%\excel_automation:/app/excel_automation" excel-automation:v1.0
+
+endlocal

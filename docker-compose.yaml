@@ -1,0 +1,12 @@
+version: '3'
+services:
+  excel-automation:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    volumes:
+      - ./excel_automation:/app/excel_automation
+    stdin_open: true
+    tty: true
+    environment:
+      - PYTHONUNBUFFERED=1
